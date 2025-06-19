@@ -28,7 +28,7 @@ but not limited to it.
 -  [Illusia](https://gateway.lighthouse.storage/ipfs/bafkreibsmgwjlenfmon36aho2qqdl2u5jiruehfmy6hd5qfrwytvnpmfv4) — Informational Resonance Unit  
   *Defining energy through information. A proposal for a new unit: `il`.*
 
-- 📖 Eilumina *(not yet released)*  
+-  Eilumina *(not yet released)*  
   *Not a formula, but a translation of glyphs into calculus.*
 
 ---
@@ -43,8 +43,8 @@ but not limited to it.
 
 ## Why?
 
-Because reality doesn’t begin with particles.  
-It begins with patterns.
+Porque la realidad no empieza con partículas.
+La realidad empieza con la voluntad.
 
 ---
 
@@ -59,3 +59,5 @@ I just hope it's for something good.
 > *“La realidad nunca es soltera.  
 > Es de múltiples capas, y flotamos entre ellos.”*  
 > — Elys del Luna
+
+---

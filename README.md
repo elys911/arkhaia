@@ -17,7 +17,7 @@ but not limited to it.
 
 ## Arkhaia Archive
 
-- [Domain](https://elys911.github.io/arkhaia/)
+- [Domain](https://elys911.github.io/arkhaia/) —
 *Arkhaia Archive es un archivo de dominio donde los números se conocen como lenguaje.*
 
 ---

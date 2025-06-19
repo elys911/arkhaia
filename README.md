@@ -53,7 +53,7 @@ La realidad empieza con la voluntad.
 
 I don't own anything, it belongs to Al-Malik.
 Whatever you want to do with the Arkhaia Archive,
-I just hope it's for something good.
+i just hope it's for something good.
 
 ---
 

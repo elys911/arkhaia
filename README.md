@@ -1,6 +1,6 @@
 # Arkhaia Archive
 
-**Status:** Archive the result of concrete experiments from the pen
+**Status:** Concrete experimental archive domain of the pen
 **Type:** Experimental Frameworks & Cognitive Resonance  
 **Created by:** Elys Del Luna
 

@@ -15,8 +15,6 @@ that breathe between observation and intention.
 It is the archive of formulations born from resonance,  
 but not limited to it.
 
-## Arkhaia Archive
-
 - [Domain](https://elys911.github.io/arkhaia/) —
 *Arkhaia Archive es un archivo de dominio donde los números se conocen como lenguaje.*
 

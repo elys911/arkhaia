@@ -50,8 +50,9 @@ It begins with patterns.
 
 ## License
 
-Open for observation.  
-Closed for corruption.
+I don't own anything, it belongs to Al-Malik.
+Whatever you want to do with the Arkhaia Archive,
+I just hope it's for something good.
 
 ---
 

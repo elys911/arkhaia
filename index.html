@@ -6,9 +6,9 @@
   <title>Arkhaia Archive</title>
   <style>
     html, body {
-      height: 100%;
       margin: 0;
-      padding: 60px 20px;
+      padding: 0;
+      height: 100%;
       background: url('ark3.3.jpg') no-repeat center center fixed;
       background-size: cover;
       background-color: #0d0d0d;
@@ -19,8 +19,15 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      overflow-x: hidden;
+      overflow: hidden;
       position: relative;
+    }
+
+    main {
+      padding: 60px 20px;
+      box-sizing: border-box;
+      max-width: 100%;
+      overflow-y: auto;
     }
 
     h1 {
@@ -39,12 +46,6 @@
       max-width: 800px;
       line-height: 1.6em;
       margin: 0.5em 0;
-    }
-
-    .divider {
-      margin: 2em 0;
-      color: #666;
-      font-size: 1.4em;
     }
 
     .btn {

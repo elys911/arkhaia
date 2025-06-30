@@ -5,57 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arkhaia Archive</title>
   <style>
-    html, body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
       height: 100%;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+      color: #f2f2f2;
       background: url('ark3.3.jpg') no-repeat center center fixed;
       background-size: cover;
       background-color: #0d0d0d;
-      color: #f2f2f2;
-      font-family: 'Georgia', serif;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       text-align: center;
-      overflow: hidden;
-      position: relative;
+      padding: 2rem;
     }
 
     main {
-      padding: 60px 20px;
-      box-sizing: border-box;
       max-width: 100%;
-      overflow-y: auto;
+      width: 100%;
+      overflow: hidden;
     }
 
     h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
 
     h2 {
-      font-size: 2em;
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
+      font-size: 2rem;
+      margin: 1.5rem 0 0.5rem 0;
     }
 
     p {
-      font-size: 1.15em;
+      font-size: 1.1rem;
       max-width: 800px;
-      line-height: 1.6em;
-      margin: 0.5em 0;
+      line-height: 1.6;
+      margin: 0.5em auto;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 24px;
-      margin: 20px 10px;
+      padding: 0.7em 1.5em;
+      margin: 1em 0.5em;
       border: 1px solid #aaa;
       color: #eaeaea;
       text-decoration: none;
-      transition: 0.3s ease;
+      transition: background-color 0.3s ease;
     }
 
     .btn:hover {
@@ -65,24 +70,41 @@
     .quote {
       margin-top: 2em;
       font-style: italic;
-      font-size: 1.1em;
+      font-size: 1rem;
       color: #aaa;
       max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     footer {
-      margin-top: 3em;
-      font-size: 0.9em;
+      margin-top: 2em;
+      font-size: 0.85rem;
       color: #666;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        padding: 0.6em 1.2em;
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Arkhaia Archive</h1>
-  </header>
-
   <main>
+    <header>
+      <h1>Arkhaia Archive</h1>
+    </header>
+
     <p>What is Arkhaia Archive?</p>
     <p>It is not a model. It is a domain of formulation — a primordial field</p>
     <p>where intention, structure, and transformation intersect.</p>
@@ -93,6 +115,7 @@
       <a class="btn" href="https://elys911.github.io/ekhtesi/">Enter Ekhtesi</a>
       <a class="btn" href="https://elys911.github.io/il/">Enter Illusia(il)</a>
     </div>
+
     <p>Don't close your eyes when you see the world is blurry,</p>
     <p>check your eyeglass lenses again,</p>
     <p>because the lenses can be damaged or worn out.</p>
@@ -103,10 +126,10 @@
       Es de múltiples capas, y flotamos entre ellos".<br>
       — Elys Del Luna
     </div>
-  </main>
 
-  <footer>
-    <strong>The Arkhaia Archive and all its contents are the property of Al-Malik</strong>
-  </footer>
+    <footer>
+      <strong>The Arkhaia Archive and all its contents are the property of Al-Malik</strong>
+    </footer>
+  </main>
 </body>
 </html>

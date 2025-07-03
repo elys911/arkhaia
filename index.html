@@ -101,6 +101,7 @@
 </head>
 <body>
   <main>
+    <div id="particles-js" style="position:fixed;top:0;left:0;z-index:-1;width:100vw;height:100vh;"></div>
     <header>
       <h1>Arkhaia Archive</h1>
     </header>
@@ -131,5 +132,19 @@
       <strong>The Arkhaia Archive and all its contents are the property of Al-Malik</strong>
     </footer>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+<script>
+  tsParticles.load("particles-js", {
+    particles: {
+      number: { value: 30 },
+      color: { value: "#ffffff" },
+      size: { value: 1 },
+      move: { enable: true, speed: 0.2 },
+      opacity: { value: 0.3 },
+    },
+    background: { color: "transparent" },
+    fullScreen: { enable: false }
+  });
+</script>
 </body>
 </html>

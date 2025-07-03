@@ -4,147 +4,329 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arkhaia Archive</title>
+
+  <!-- FONT: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
   <style>
+    /* RESET & GLOBAL */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Georgia', serif;
-      color: #f2f2f2;
-      background: url('ark3.3.jpg') no-repeat center center fixed;
-      background-size: cover;
-      background-color: #0d0d0d;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0a0f1f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* PROJECT CARDS */
+    #projects {
+      text-align: center;
+    }
+    
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .card {
+      background: #111b2e;
+      border: 1px solid #00bfff33;
+      border-radius: 10px;
+      padding: 2rem 1.5rem;
+      transition: 0.3s ease;
+      box-shadow: 0 0 5px #00bfff20;
+    }
+    
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: #ffffff;
+    }
+    
+    .card .btn {
+      background-color: transparent;
+      border: 2px solid #00bfff;
+      color: #00bfff;
+      font-weight: 600;
+      border-radius: 6px;
+      padding: 0.6rem 1.5rem;
+      transition: 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px #00bfff55;
+    }
+    
+    .card .btn:hover {
+      background-color: #00bfff;
+      color: #0a0f1f;
+      box-shadow: 0 0 12px #00bfffaa;
+    }
+
+    /* LAYOUT */
+    header, section, footer {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-weight: 400;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #888;
+      padding-bottom: 2rem;
+    }
+
+    #hero {
+      position: relative;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 2rem;
-    }
-
-    main {
-      max-width: 100%;
-      width: 100%;
+      z-index: 1;
       overflow: hidden;
     }
-
-    h1 {
-      font-size: 2.5rem;
+    
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom right, #0a0f1fb0, #0a0f1fe0);
+      backdrop-filter: blur(4px);
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #ffffff;
       margin-bottom: 1rem;
     }
-
-    h2 {
-      font-size: 2rem;
-      margin: 1.5rem 0 0.5rem 0;
+    
+    .hero-content p {
+      font-size: 1.25rem;
+      color: #cfcfcf;
+      margin-bottom: 2rem;
     }
 
-    p {
-      font-size: 1.1rem;
+    /* QUOTE SECTION */
+    #quote {
+      text-align: center;
+      padding: 5rem 2rem;
       max-width: 800px;
-      line-height: 1.6;
-      margin: 0.5em auto;
+      margin: auto;
+      opacity: 0;
+      animation: fadeIn 1.8s ease-out 0.3s forwards;
+    }
+    
+    #quote blockquote {
+      font-size: 1.3rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+    
+    #quote cite {
+      font-size: 1rem;
+      color: #888;
+    }
+    
+    /* FADE ANIMATION */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
+
+    /* SCROLL SMOOTH TEST BUTTON */
     .btn {
       display: inline-block;
-      padding: 0.7em 1.5em;
-      margin: 1em 0.5em;
-      border: 1px solid #aaa;
-      color: #eaeaea;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
+      padding: 0.8rem 2rem;
+      background: transparent;
+      border: 2px solid #00bfff;
+      color: #00bfff;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      margin: 0.5rem;
     }
 
     .btn:hover {
-      background-color: #222;
+      background-color: #00bfff;
+      color: #0a0f1f;
+      box-shadow: 0 0 15px #00bfff88;
     }
 
-    .quote {
-      margin-top: 2em;
-      font-style: italic;
-      font-size: 1rem;
-      color: #aaa;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+    /* PARTICLE LAYER */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero-content p {
+        font-size: 1rem;
+      }
+      
+      .card-grid {
+        gap: 1rem;
+      }
+      
+      .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      
+      #quote blockquote {
+        font-size: 1.1rem;
+      }
     }
 
     footer {
-      margin-top: 2em;
-      font-size: 0.85rem;
-      color: #666;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #aaa;
+      padding: 2rem 1rem;
+      background: rgba(255, 255, 255, 0.01);
+      backdrop-filter: blur(3px);
+      box-shadow: 0 -1px 4px #00bfff11;
+      border-top: 1px solid #00bfff22;
     }
 
-    @media screen and (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      .btn {
-        padding: 0.6em 1.2em;
-        font-size: 0.95rem;
-      }
-    }
   </style>
+
+  <!-- META SEO -->
+  <meta name="description" content="Arkhaia Archive - A multidimensional knowledge repository. TQRE, Ekhtesi, and Illusia.">
+  <meta property="og:title" content="Arkhaia Archive" />
+  <meta property="og:description" content="Where intention, structure, and transformation intersect." />
+  <meta property="og:image" content="https://arkhaia.space/ark3.3.jpg" />
+  <meta property="og:url" content="https://arkhaia.space/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
 </head>
+
 <body>
-  <main>
-    <div id="particles-js" style="position:fixed;top:0;left:0;z-index:-1;width:100vw;height:100vh;"></div>
-    <header>
+
+  <!-- PARTICLE BACKGROUND -->
+  <div id="particles-js"></div>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
       <h1>Arkhaia Archive</h1>
-    </header>
-
-    <p>What is Arkhaia Archive?</p>
-    <p>It is not a model. It is a domain of formulation, a primordial field</p>
-    <p>where intention, structure, and transformation intersect.</p>
-    <p>Arkhaia es el lugar donde la lógica deja de ser herramienta y se vuelve espacio.</p>
-
-    <div>
-      <a class="btn" href="https://elys911.github.io/TQRE/">Enter TQRE</a>
-      <a class="btn" href="https://elys911.github.io/ekhtesi/">Enter Ekhtesi</a>
-      <a class="btn" href="https://elys911.github.io/il/">Enter Illusia(il)</a>
+      <p>Where Intention Meets Formulation</p>
+      <a href="#projects" class="btn">Enter the Archive</a>
     </div>
+  </div>
+</section>
 
-    <p>Don't close your eyes when you see the world is blurry,</p>
-    <p>check your eyeglass lenses again,</p>
-    <p>because the lenses can be damaged or worn out.</p>
-    <p>Only the world truly knows the truth, while the truth in man is only the death.</p>
 
-    <div class="quote">
-      "La realidad nunca es soltera. <br>
-      Es de múltiples capas, y flotamos entre ellos".<br>
-      Elys Del Luna
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2>What is Arkhaia?</h2>
+    <p>It is not a model. It is a domain of formulation, a primordial field where intention, structure, and transformation intersect.</p>
+  </section>
+
+  <!-- PLACEHOLDER FOR NEXT STAGES -->
+  <section id="projects">
+  <h2>Explore the Dimensions</h2>
+    <div class="card-grid">
+    <div class="card">
+      <h3>TQRE</h3>
+      <a class="btn" href="https://elys911.github.io/TQRE/" target="_blank">Enter</a>
     </div>
+    <div class="card">
+      <h3>Ekhtesi</h3>
+      <a class="btn" href="https://elys911.github.io/ekhtesi/" target="_blank">Enter</a>
+    </div>
+    <div class="card">
+      <h3>Illusia</h3>
+      <a class="btn" href="https://elys911.github.io/il/" target="_blank">Enter</a>
+    </div>
+  </div>
+  </section>
 
-    <footer>
-      <strong>The Arkhaia Archive and all its contents are the property of Al-Malik</strong>
-    </footer>
-  </main>
+  <section id="quote">
+    <blockquote>
+    “La realidad nunca es soltera.<br>
+    Es de múltiples capas, y flotamos entre ellos.”
+    </blockquote>
+    <cite>— Elys Del Luna</cite>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <a class="btn" href="mailto:elys@arkhaia.space">
+      ✉️ elys@arkhaia.space
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>The Arkhaia Archive and all its contents are the property of Al-Malik</strong>
+  </footer>
+
+  <!-- PARTICLE SCRIPT -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
-<script>
-  tsParticles.load("particles-js", {
-    particles: {
-      number: { value: 30 },
-      color: { value: "#ffffff" },
-      size: { value: 1 },
-      move: { enable: true, speed: 0.2 },
-      opacity: { value: 0.3 },
-    },
-    background: { color: "transparent" },
-    fullScreen: { enable: false }
-  });
-</script>
+  <script>
+    tsParticles.load("particles-js", {
+      particles: {
+        number: { value: 40 },
+        color: { value: "#00bfff" },
+        size: { value: 1.5 },
+        move: { enable: true, speed: 0.3 },
+        opacity: { value: 0.2 },
+      },
+      background: { color: "transparent" },
+      fullScreen: { enable: false }
+    });
+  </script>
 </body>
 </html>

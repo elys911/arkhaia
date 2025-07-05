@@ -38,9 +38,8 @@ La realidad empieza con la voluntad.
 
 ## License
 
-I don't own anything, it belongs to Al-Malik.
-Whatever you want to do with the Arkhaia Archive,
-i just hope it's for something good.
+We don't own anything, it belongs to Al-Malik.
+
 
 ---
 

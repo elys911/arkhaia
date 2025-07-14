@@ -8,123 +8,346 @@
   <!-- FONT: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- META SEO -->
-  <meta name="description" content="Arkhaia Archive is a multidimensional knowledge repository bridging structure, transformation, and intention. Explore TQRE, Ekhtesi, Illusia, and Acción." />
-  <meta name="keywords" content="Arkhaia, TQRE, Ekhtesi, Illusia, Acción, knowledge architecture, quantum formulation, symbolic systems, multidimensional archive" />
-  <meta name="author" content="Elys Del Luna" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://arkhaia.space/" />
+  <style>
+    /* RESET & GLOBAL */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- OPEN GRAPH -->
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0a0f1f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* PROJECT CARDS */
+    #projects {
+      text-align: center;
+    }
+    
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .card {
+      background: #111b2e;
+      border: 1px solid #00bfff33;
+      border-radius: 10px;
+      padding: 2rem 1.5rem;
+      transition: 0.3s ease;
+      box-shadow: 0 0 5px #00bfff20;
+    }
+    
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: #ffffff;
+    }
+    
+    .card .btn {
+      background-color: transparent;
+      border: 2px solid #00bfff;
+      color: #00bfff;
+      font-weight: 600;
+      border-radius: 6px;
+      padding: 0.6rem 1.5rem;
+      transition: 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px #00bfff55;
+    }
+    
+    .card .btn:hover {
+      background-color: #00bfff;
+      color: #0a0f1f;
+      box-shadow: 0 0 12px #00bfffaa;
+    }
+
+    /* LAYOUT */
+    header, section, footer {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-weight: 400;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #888;
+      padding-bottom: 2rem;
+    }
+
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 1;
+      overflow: hidden;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom right, #0a0f1fb0, #0a0f1fe0);
+      backdrop-filter: blur(4px);
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+      font-size: 1.25rem;
+      color: #cfcfcf;
+      margin-bottom: 2rem;
+    }
+
+    /* QUOTE SECTION */
+    #quote {
+      text-align: center;
+      padding: 5rem 2rem;
+      max-width: 800px;
+      margin: auto;
+      opacity: 0;
+      animation: fadeIn 1.8s ease-out 0.3s forwards;
+    }
+    
+    #quote blockquote {
+      font-size: 1.3rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+    
+    #quote cite {
+      font-size: 1rem;
+      color: #888;
+    }
+    
+    /* FADE ANIMATION */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+
+    /* SCROLL SMOOTH TEST BUTTON */
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: transparent;
+      border: 2px solid #00bfff;
+      color: #00bfff;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      margin: 0.5rem;
+    }
+
+    .btn:hover {
+      background-color: #00bfff;
+      color: #0a0f1f;
+      box-shadow: 0 0 15px #00bfff88;
+    }
+
+    /* PARTICLE LAYER */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero-content p {
+        font-size: 1rem;
+      }
+      
+      .card-grid {
+        gap: 1rem;
+      }
+      
+      .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      
+      #quote blockquote {
+        font-size: 1.1rem;
+      }
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #aaa;
+      padding: 2rem 1rem;
+      background: rgba(255, 255, 255, 0.01);
+      backdrop-filter: blur(3px);
+      box-shadow: 0 -1px 4px #00bfff11;
+      border-top: 1px solid #00bfff22;
+    }
+
+  </style>
+
+  <!-- META SEO -->
+  
+  <!-- BASIC -->
+  <meta name="description" content="Arkhaia Archive is a multidimensional knowledge repository bridging structure, transformation, and intention. Explore TQRE, Ekhtesi, and Illusia.">
+  <meta name="keywords" content="Arkhaia, TQRE, Ekhtesi, Illusia, knowledge architecture, quantum formulation, symbolic systems, multidimensional archive">
+  <meta name="author" content="Elys Del Luna">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arkhaia.space/">
+  
+  <!-- OPEN GRAPH (Facebook, Discord, LinkedIn) -->
   <meta property="og:title" content="Arkhaia Archive - Knowledge Beyond Dimensions" />
-  <meta property="og:description" content="A hyperstructured domain of symbolic knowledge. Explore the frontiers of formulation through TQRE, Ekhtesi, Illusia, and Acción." />
+  <meta property="og:description" content="A hyperstructured domain of symbolic knowledge. Explore the frontiers of formulation through TQRE, Ekhtesi, and Illusia." />
   <meta property="og:image" content="https://arkhaia.space/ark3.3.jpg" />
   <meta property="og:image:alt" content="Arkhaia Archive Preview" />
   <meta property="og:url" content="https://arkhaia.space/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Arkhaia Archive" />
-
+  
   <!-- TWITTER CARDS -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Arkhaia Archive - Knowledge Beyond Dimensions">
-  <meta name="twitter:description" content="TQRE, Ekhtesi, Illusia, Acción — the multidimensional domain where intention meets formulation.">
+  <meta name="twitter:description" content="TQRE, Ekhtesi, and Illusia - enter the multidimensional domain where intention meets formulation.">
   <meta name="twitter:image" content="https://arkhaia.space/ark3.3.jpg">
   <meta name="twitter:image:alt" content="Arkhaia Archive Cover">
-  <meta name="twitter:site" content="@arkhaia_space">
+  <meta name="twitter:site" content="@arkhaia_space"> <!-- Ganti kalau udah punya Twitter -->
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Accessibility and system theme */
-    @media (prefers-color-scheme: light) {
-      body { background-color: #ffffff; color: #222; }
-    }
-  </style>
 </head>
+
 <body>
 
   <!-- PARTICLE BACKGROUND -->
-  <div id="particles-js" aria-hidden="true"></div>
+  <div id="particles-js"></div>
 
   <!-- HERO SECTION -->
-  <section id="hero" role="banner" aria-label="Introduction">
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <h1>Arkhaia Archive</h1>
-        <p>When limitations are tried to be pursued with knowledge.</p>
-        <p>Don't close your eyes when you see the world is blurry,</p>
-        <p>check your eyeglass lenses again,</p>
-        <p>because the lenses can be damaged or worn out.</p>
-        <p>Only the world truly knows the truth, while the truth in man is only the death.</p>
-        <a href="#projects" class="btn" aria-label="Enter the Archive">Enter the Archive</a>
-      </div>
+  <section id="hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Arkhaia Archive</h1>
+      <p>When limitations are tried to be pursued with knowledge.</p>
+      <p>Don't close your eyes when you see the world is blurry,</p>
+      <p>check your eyeglass lenses again,</p>
+      <p>because the lenses can be damaged or worn out.</p>
+      <p>Only the world truly knows the truth, while the truth in man is only the death.</p>
+      <a href="#projects" class="btn">Enter the Archive</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ABOUT SECTION -->
-  <section id="about" aria-labelledby="what-is-arkhaia">
-    <h2 id="what-is-arkhaia">What is Arkhaia?</h2>
+  <section id="about">
+    <h2>What is Arkhaia?</h2>
     <p>It is not a model. It is a domain of formulation, a primordial field where intention, structure, and transformation intersect.</p>
     <p>Arkhaia Archive is the place where logic stops being a tool and becomes a space.</p>
   </section>
 
-  <!-- PROJECTS SECTION -->
-  <section id="projects" aria-labelledby="explore-dimensions">
-    <h2 id="explore-dimensions">Explore the Dimensions</h2>
+  <!-- PLACEHOLDER FOR NEXT STAGES -->
+  <section id="projects">
+  <h2>Explore the Dimensions</h2>
     <div class="card-grid">
-      <div class="card">
-        <h3>TQRE</h3>
-        <a class="btn" href="https://elys911.github.io/TQRE/" target="_blank" rel="noopener">Enter</a>
-      </div>
-      <div class="card">
-        <h3>Ekhtesi</h3>
-        <a class="btn" href="https://elys911.github.io/ekhtesi/" target="_blank" rel="noopener">Enter</a>
-      </div>
-      <div class="card">
-        <h3>Illusia</h3>
-        <a class="btn" href="https://elys911.github.io/il/" target="_blank" rel="noopener">Enter</a>
-      </div>
-      <div class="card">
-        <h3>Acción</h3>
-        <a class="btn" href="https://elys911.github.io/Accion/" target="_blank" rel="noopener">Enter</a>
-      </div>
+    <div class="card">
+      <h3>TQRE</h3>
+      <a class="btn" href="https://elys911.github.io/TQRE/" target="_blank">Enter</a>
     </div>
+    <div class="card">
+      <h3>Ekhtesi</h3>
+      <a class="btn" href="https://elys911.github.io/ekhtesi/" target="_blank">Enter</a>
+    </div>
+    <div class="card">
+      <h3>Illusia</h3>
+      <a class="btn" href="https://elys911.github.io/il/" target="_blank">Enter</a>
+    </div>
+  </div>
   </section>
 
-  <!-- QUOTE SECTION -->
-  <section id="quote" aria-label="Reflection">
+  <section id="quote">
     <blockquote>
-      “La realidad nunca es soltera.<br />Es de múltiples capas, y flotamos entre ellos.”
+    âLa realidad nunca es soltera.<br>
+    Es de mÃºltiples capas, y flotamos entre ellos.â
     </blockquote>
-    <cite>&mdash; Elys Del Luna</cite>
+    <cite>â Elys Del Luna</cite>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" aria-labelledby="contact-label">
-    <h2 id="contact-label">Contact</h2>
-    <a class="btn" href="mailto:elys@arkhaia.space">✉️ elys@arkhaia.space</a>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <a class="btn" href="mailto:elys@arkhaia.space">
+      âï¸ elys@arkhaia.space
+    </a>
   </section>
 
   <!-- FOOTER -->
-  <footer role="contentinfo">
-    <strong>All works in Arkhaia are dedicated to Al-Malik, the Supreme Owner of Knowledge.</strong>
+  <footer>
+    <strong>The Arkhaia Archive and all its contents are the property of Al-Malik</strong>
   </footer>
 
-  <!-- PARTICLES JS -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js" defer></script>
+  <!-- PARTICLE SCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
   <script>
-    window.addEventListener("load", () => {
-      tsParticles.load("particles-js", {
-        particles: {
-          number: { value: 40 },
-          color: { value: "#00bfff" },
-          size: { value: 1.5 },
-          move: { enable: true, speed: 0.3 },
-          opacity: { value: 0.2 },
-        },
-        background: { color: "transparent" },
-        fullScreen: { enable: false }
-      });
+    tsParticles.load("particles-js", {
+      particles: {
+        number: { value: 40 },
+        color: { value: "#00bfff" },
+        size: { value: 1.5 },
+        move: { enable: true, speed: 0.3 },
+        opacity: { value: 0.2 },
+      },
+      background: { color: "transparent" },
+      fullScreen: { enable: false }
     });
   </script>
 </body>
